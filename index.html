@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <!-- Meta settings -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Page title -->
+    <title>مهندس نعمت بهروزی فرد</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= HERO SECTION ================= -->
+    <section class="hero">
+
+        <!-- Hero content wrapper -->
+        <div class="hero-content">
+            <h1>مهندس نعمت بهروزی فرد</h1>
+            <p>مهندس معمار</p>
+            <span>خلق فضاهای آرام و ماندگار</span>
+        </div>
+
+    </section>
+
+    <!-- ================= ABOUT SECTION ================= -->
+    <section class="about reveal">
+
+        <!-- About content box -->
+        <div class="box">
+            <h2>درباره</h2>
+
+            <p>
+                مهندس معمار، دانش آموخته دانشگاه علم وصنعت تهران
+                عضو سازمان نظام مهندسی
+                پایه یک طراحی ، نظارت ، اجرا
+            </p>
+        </div>
+
+    </section>
+
+    <!-- ================= PROJECTS SECTION ================= -->
+    <section class="projects">
+
+        <!-- Section title -->
+        <h2 class="reveal">نمونه‌کارها</h2>
+
+        <!-- Projects list wrapper -->
+        <div class="list">
+
+            <!-- Project Card 1 -->
+            <div class="project reveal">
+                <div class="img">
+                    <img src="images/project1.png" alt="طراحی ویلای باغی">
+                </div>
+                <div class="text">
+                    <h3>طراحی ویلای باغی</h3>
+                    <p>کارفرما: آقای سپهر — 1402</p>
+                </div>
+            </div>
+
+            <!-- Project Card 2 -->
+            <div class="project reveal">
+                <div class="img">
+                    <img src="images/project2.png" alt="طرح نمای ساختمان">
+                </div>
+                <div class="text">
+                    <h3>طرح نمای ساختمان</h3>
+                    <p>کارفرما: مریم شیری — 1405</p>
+                </div>
+            </div>
+
+            <!-- Project Card 3 -->
+            <div class="project reveal">
+                <div class="img">
+                    <img src="images/project3.png" alt="طرح نمای ساختمان">
+                </div>
+                <div class="text">
+                    <h3>طرح نمای ساختمان</h3>
+                    <p>کارفرما: زهره وند — 1404</p>
+                </div>
+            </div>
+
+            <!-- Project Card 4 -->
+            <div class="project reveal">
+                <div class="img">
+                    <img src="images/project4.png" alt="طرح نمای ساختمان">
+                </div>
+                <div class="text">
+                    <h3>طرح نمای ساختمان</h3>
+                    <p>کارفرما: آقای ابولفتحی — 1404</p>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= FOOTER SECTION ================= -->
+    <footer class="footer reveal">
+
+        <!-- Contact info -->
+        <p>📱 شماره تماس: ۰۹۱۸۳۱۱۰۶۳۳</p>
+
+        <!-- Address -->
+        <p>📍 همدان، میدان بیمه، خیابان شهید مجیدی، مجتمع اداری نیاوران، طبقه دوم، واحد ۶</p>
+
+    </footer>
+
+    <!-- ================= INTERSECTION OBSERVER SCRIPT ================= -->
+    <script>
+        // Select all elements that should animate on scroll
+        const elements = document.querySelectorAll(".reveal");
+
+        // Create observer for scroll animation
+        const observer = new IntersectionObserver((entries) => {
+
+            entries.forEach(entry => {
+
+                // Add animation class when visible
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("active");
+                } 
+                // Remove when out of view (re-trigger animation)
+                else {
+                    entry.target.classList.remove("active");
+                }
+
+            });
+
+        }, {
+            threshold: 0.15
+        });
+
+        // Observe each element
+        elements.forEach(el => observer.observe(el));
+    </script>
+
+</body>
+</html>
