@@ -1,324 +1,294 @@
-/* ================= FONTS ================= */
-
-@font-face {
-    font-family: "BNazanin";
-    src: url("fonts/BNazanin.ttf") format("truetype");
-}
-
-@font-face {
-    font-family: "BYekan";
-    src: url("fonts/BYekan.ttf") format("truetype");
-}
-
-/* ================= ROOT VARIABLES ================= */
-
+/* ==========================================================================
+   1. GLOBAL ARCHITECTURAL DESIGN TOKENS (CSS VARIABLE MATRIX)
+   ========================================================================== */
 :root {
-    --green: #5F8F6B;
-    --green-dark: #476951;
-    --cream: #F3EBDD;
-    --white: #FFFFFF;
-    --black: #1B1B1B;
-    --foam: #CBB8A2;
+    /* Pure Psychological Color Balance (Quiet Luxury / High-End Studio) */
+    --clr-canvas: #FBFBFA;         /* Premium Ultra-Light Linen White (Easy on eyes) */
+    --clr-card: #FFFFFF;           /* Pristine White for structured layout layers */
+    --clr-ink-dark: #111111;       /* Technical Deep Charcoal Ink (Absolute Authority) */
+    --clr-ink-muted: #555555;      /* Architectural Steel Gray for body paragraphs */
+    --clr-brass-gold: #C5A880;     /* Refined Muted Brass Gold for subtle fine details */
+    --clr-hairline: rgba(17, 17, 17, 0.06); /* Invisible grid hairline structure */
+
+    /* The Ultimate Fluid Animation Curves (Hardware Accelerated 60fps) */
+    --curve-expo: cubic-bezier(0.16, 1, 0.3, 1); /* Elegant Ease Out Expo curve */
+    --transition-smooth: 0.5s var(--curve-expo);
+    --transition-fast: 0.25s var(--curve-expo);
 }
 
-/* ================= GLOBAL RESET ================= */
-
+/* ==========================================================================
+   2. REFINED SYSTEM RESET & INTER-SCALE TYPOGRAPHY DEFINITION
+   ========================================================================== */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margin: 0; padding: 0; box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 html {
     scroll-behavior: smooth;
+    background-color: var(--clr-canvas);
+    text-size-adjust: 100%;
 }
-
-/* ================= BASE STYLES ================= */
 
 body {
-    font-family: "BNazanin", sans-serif;
-    background: var(--cream);
-    color: var(--black);
+    /* BNazanin used dynamically for ultra-elegant editorial layout text reading */
+    font-family: "BNazanin", "Georgia", serif;
+    color: var(--clr-ink-muted);
+    background-color: var(--clr-canvas);
+    line-height: 1.85;
+    /* Absolute Fluid Base Font Scaling System: Adapts dynamically every pixel wide */
+    font-size: clamp(1.05rem, 0.3vw + 0.95rem, 1.25rem);
     overflow-x: hidden;
-    line-height: 2;
 }
 
-/* Responsive image base */
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
+/* BYekan utilized for clean structural, balanced titles and structural nodes */
+h1, h2, h3, .logo-text, .nav-list, .meta-label, .matrix-title, .work-index, .author-signature, .btn-structural-call {
+    font-family: "BYekan", "Arial", sans-serif;
+    color: var(--clr-ink-dark);
+    font-weight: normal;
+    letter-spacing: -0.02em;
 }
 
-/* ================= HERO SECTION ================= */
+a { text-decoration: none; color: inherit; }
+button { background: none; border: none; font: inherit; }
+img { width: 100%; height: auto; display: block; }
 
-.hero {
-    min-height: 100vh;
+/* Global Structural Utilities */
+.section-container {
+    width: 100%; max-width: 1360px; margin: 0 auto;
+    padding-right: clamp(1.5rem, 6vw, 5rem);
+    padding-left: clamp(1.5rem, 6vw, 5rem);
+}
+.accent-text { color: var(--clr-brass-gold); }
 
-    background:
-        linear-gradient(
-            rgba(33, 43, 36, 0.60),
-            rgba(33, 43, 36, 0.60)
-        ),
-        url("images/hero.jpg");
-
-    background-size: cover;
-    background-position: center;
-
-    /* Disabled fixed background for mobile performance */
-    background-attachment: scroll;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    text-align: center;
-    color: white;
-
-    padding: 60px 20px;
+/* ==========================================================================
+   3. SITE HEADER & NAVIGATION CORE (Pure Minimalism)
+   ========================================================================== */
+.site-header {
+    position: fixed; top: 0; left: 0; width: 100%; z-index: 100;
+    background-color: rgba(251, 251, 250, 0.85);
+    backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--clr-hairline);
+    transition: var(--transition-smooth);
 }
 
-.hero-content {
-    max-width: 900px;
+.nav-container {
+    max-width: 1440px; margin: 0 auto; display: flex;
+    justify-content: space-between; align-items: center;
+    padding: clamp(1rem, 2.5vh, 1.8rem) clamp(1.5rem, 6vw, 5rem);
 }
 
-.hero h1 {
-    font-family: "BYekan";
-    font-size: clamp(2.2rem, 5vw, 4rem);
-    margin-bottom: 15px;
+.nav-logo { display: flex; align-items: center; gap: 12px; }
+.structural-logo { width: clamp(26px, 3.5vw, 34px); height: auto; color: var(--clr-brass-gold); }
+.logo-text { font-size: clamp(1.2rem, 1.5vw + 0.5rem, 1.5rem); font-weight: bold; }
+
+.nav-list { display: flex; align-items: center; gap: clamp(2rem, 4vw, 3.5rem); font-size: 1.05rem; }
+.nav-link { transition: var(--transition-fast); position: relative; padding: 5px 0; }
+.nav-link:hover { color: var(--clr-brass-gold); }
+
+/* Absolute Minimal Phone Action Button */
+.nav-phone-cta {
+    display: inline-flex; align-items: center; gap: 8px;
+    border: 1px solid var(--clr-ink-dark); color: var(--clr-ink-dark);
+    padding: clamp(0.4rem, 1vh, 0.6rem) clamp(1.2rem, 2vw, 1.8rem);
+    border-radius: 2px; transition: var(--transition-smooth);
+}
+.icon-tel { width: 18px; height: 18px; }
+.nav-phone-cta:hover {
+    background-color: var(--clr-ink-dark); color: var(--clr-canvas);
+    transform: translateY(-2px);
 }
 
-.hero p {
-    font-size: clamp(1.1rem, 2.5vw, 1.6rem);
-    margin-bottom: 10px;
+/* ==========================================================================
+   4. FLUID HERO SECTION (Optimal Structural Grid)
+   ========================================================================== */
+.hero-section {
+    min-height: 100vh; display: flex; align-items: center;
+    padding-top: clamp(6.5rem, 12vh, 10rem); padding-bottom: clamp(3rem, 6vh, 6rem);
+    padding-right: clamp(1.5rem, 6vw, 5rem); padding-left: clamp(1.5rem, 6vw, 5rem);
+    max-width: 1440px; margin: 0 auto;
 }
 
-.hero span {
-    font-size: clamp(0.95rem, 2vw, 1.2rem);
-    opacity: .95;
+.hero-grid {
+    display: grid; grid-template-columns: 1.2fr 0.8fr; gap: clamp(2.5rem, 5vw, 6rem);
+    align-items: center; width: 100%;
 }
 
-/* ================= ABOUT SECTION ================= */
-
-.about {
-    padding: clamp(70px, 10vw, 140px) 6%;
+.hero-meta {
+    display: block; font-family: "BYekan"; font-size: 0.95rem;
+    text-transform: uppercase; color: var(--clr-brass-gold);
+    margin-bottom: clamp(1rem, 2vh, 1.8rem);
 }
 
-.box {
-    background: rgba(255,255,255,.95);
-
-    max-width: 900px;
-    margin: auto;
-
-    padding: clamp(25px, 5vw, 55px);
-
-    border-radius: 28px;
-
-    border-right: 8px solid var(--foam);
-
-    box-shadow: 0 15px 40px rgba(0,0,0,.06);
+.hero-title {
+    font-size: clamp(2.8rem, 5.5vw + 0.5rem, 5rem);
+    line-height: 1.15; margin-bottom: clamp(1.2rem, 3vh, 2.2rem);
 }
 
-.box h2 {
-    font-family: "BYekan";
-    font-size: clamp(1.6rem, 3vw, 2.3rem);
-    margin-bottom: 25px;
+.hero-description {
+    font-size: clamp(1.2rem, 0.5vw + 1rem, 1.4rem);
+    max-width: 580px; text-align: justify; color: var(--clr-ink-muted);
 }
 
-.box p {
-    font-size: clamp(1.1rem, 2.5vw, 1.45rem);
-    line-height: 2.2;
+/* High-End Clean Picture Frame */
+.minimal-image-frame { position: relative; width: 100%; overflow: hidden; }
+.fluid-hero-img {
+    width: 100%; aspect-ratio: 4/5; object-fit: cover;
+    filter: grayscale(10%) contrast(102%);
+}
+.hairline-overlay {
+    position: absolute; inset: clamp(10px, 2vw, 20px);
+    border: 1px solid rgba(255, 255, 255, 0.4); pointer-events: none;
 }
 
-/* ================= PROJECTS SECTION ================= */
+/* ==========================================================================
+   5. PHILOSOPHY SECTION (Minimalist Typography Powerhouse)
+   ========================================================================== */
+.philosophy-section { background-color: var(--clr-card); padding: clamp(5rem, 10vw, 9rem) 0; border-y: 1px solid var(--clr-hairline); }
+.meta-label { font-size: 0.9rem; color: var(--clr-brass-gold); margin-bottom: 1.5rem; text-transform: uppercase; }
+.section-heading { font-size: clamp(2.2rem, 3.5vw, 3.6rem); line-height: 1.25; margin-bottom: 2rem; }
 
-.projects {
-    padding: clamp(70px, 10vw, 140px) 6%;
+.philosophy-layout {
+    display: grid; grid-template-columns: 0.3fr 1.7fr; gap: clamp(1rem, 4vw, 4rem);
 }
 
-.projects h2 {
-    font-family: "BYekan";
-    font-size: clamp(1.8rem, 3vw, 2.4rem);
-    margin-bottom: 50px;
+.paragraph-leading {
+    font-size: clamp(1.3rem, 0.6vw + 1.1rem, 1.55rem);
+    line-height: 2; color: var(--clr-ink-dark); text-align: justify;
+    margin-bottom: clamp(2.5rem, 5vh, 4rem); max-width: 880px;
 }
 
-.list {
-    display: flex;
-    flex-direction: column;
-    gap: 35px;
+/* Minimalist technical structural layout statistics */
+.data-matrix {
+    display: flex; flex-wrap: wrap; gap: clamp(2rem, 5vw, 5rem);
+    border-top: 1px solid var(--clr-hairline); padding-top: clamp(2rem, 4vh, 3.5rem);
+}
+.matrix-item { display: flex; flex-direction: column; gap: 6px; }
+.matrix-title { font-size: 0.95rem; color: var(--clr-ink-muted); }
+.matrix-value { font-size: 1.25rem; color: var(--clr-ink-dark); }
+
+/* ==========================================================================
+   6. SELECTIONS GALLERY (True Mathematical Fluid Grid Layout)
+   ========================================================================== */
+.works-section { padding: clamp(5rem, 10vw, 9rem) 0; }
+.works-header { margin-bottom: clamp(3rem, 6vh, 5rem); }
+
+/* Absolute perfection fluid grid system - Automatically structures column counts without layout breaking */
+.fluid-works-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(clamp(290px, 25vw, 400px), 1fr));
+    gap: clamp(1.5rem, 3.5vw, 3.5rem);
 }
 
-/* ================= PROJECT CARD ================= */
-
-.project {
-    display: flex;
-    align-items: center;
-
-    background: rgba(255,255,255,.95);
-
-    border-radius: 28px;
-
-    padding: 14px;
-
-    min-height: 220px;
-
-    box-shadow: 0 12px 35px rgba(0,0,0,.07);
-
-    transition: all .4s ease;
-
-    opacity: 0;
-    transform: translateY(50px);
+.work-architecture-card {
+    display: flex; flex-direction: column; gap: 18px;
+    transition: var(--transition-smooth); will-change: transform;
 }
 
-.project.active {
-    opacity: 1;
-    transform: translateY(0);
+.work-thumbnail {
+    width: 100%; aspect-ratio: 3/2; overflow: hidden; position: relative;
+    background-color: var(--clr-canvas);
+}
+.work-thumbnail img {
+    width: 100%; height: 100%; object-fit: cover;
+    transition: transform 0.7s var(--curve-expo);
 }
 
-.project:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 25px 60px rgba(0,0,0,.12);
+/* Elegant and modern hover reactions */
+.work-architecture-card:hover .work-thumbnail img { transform: scale(1.04); }
+.work-architecture-card:hover { transform: translateY(-4px); }
+
+.work-meta-details { display: flex; flex-direction: column; gap: 4px; }
+.work-index { font-size: 1.3rem; color: var(--clr-ink-dark); }
+.work-category { font-size: 0.95rem; color: var(--clr-ink-muted); }
+
+/* ==========================================================================
+   7. CLOSING CALL ACTION SECTION (Clean Call Portal Focused)
+   ========================================================================== */
+.closing-section { padding: clamp(6rem, 12vw, 10rem) 0; background-color: var(--clr-card); border-top: 1px solid var(--clr-hairline); }
+.minimal-center { max-width: 750px; margin: 0 auto; text-align: center; display: flex; flex-direction: column; align-items: center; }
+
+.closing-headline { font-size: clamp(2.2rem, 3.8vw, 3.8rem); margin-bottom: 1.5rem; }
+.closing-text { font-size: 1.25rem; color: var(--clr-ink-muted); margin-bottom: clamp(2.5rem, 5vh, 3.5rem); }
+
+/* Meticulous architecture style action trigger button */
+.btn-structural-call {
+    display: inline-flex; align-items: center; gap: 15px;
+    background-color: var(--clr-ink-dark); color: var(--clr-canvas);
+    padding: clamp(0.9rem, 2vh, 1.2rem) clamp(2rem, 4vw, 3.5rem);
+    font-size: 1.2rem; border-radius: 1px; transition: var(--transition-smooth);
+}
+.arrow-icon { width: 20px; height: 20px; transition: transform 0.3s var(--curve-expo); }
+.btn-structural-call:hover { background-color: var(--clr-brass-gold); transform: translateY(-3px); }
+.btn-structural-call:hover .arrow-icon { transform: translateX(-6px); }
+
+/* ==========================================================================
+   8. FOOTER WITH INTEGRATED CREDITS
+   ========================================================================== */
+.site-footer {
+    background-color: var(--clr-canvas); padding: clamp(3rem, 6vh, 5rem) 0;
+    border-top: 1px solid var(--clr-hairline);
+}
+.footer-container {
+    max-width: 1440px; margin: 0 auto; display: flex; flex-wrap: wrap;
+    justify-content: space-between; align-items: flex-start; gap: 30px;
+    padding: 0 clamp(1.5rem, 6vw, 5rem);
 }
 
-/* ================= PROJECT IMAGE ================= */
+.footer-title { font-size: 1.3rem; font-weight: bold; display: block; margin-bottom: 6px; }
+.footer-sub { font-size: 0.95rem; color: var(--clr-ink-muted); }
 
-.img {
-    width: 260px;
-    min-width: 260px;
-    height: 200px;
+.footer-credits { text-align: left; display: flex; flex-direction: column; gap: 4px; }
+.author-signature { font-size: 1rem; color: var(--clr-ink-dark); font-weight: bold; text-align: right;}
+.copyright-text { font-size: 0.85rem; color: var(--clr-ink-muted); text-align: right; }
 
-    overflow: hidden;
+/* ==========================================================================
+   9. LIQUID PERFORMANCE ANIMATIONS ENGINE
+   ========================================================================== */
+.section-reveal { opacity: 0; transform: translateY(25px); transition: 0.9s var(--curve-expo); will-change: transform, opacity; }
+.section-reveal.is-visible { opacity: 1; transform: translateY(0); }
 
-    border-radius: 20px;
+.load-reveal { opacity: 0; transform: translateY(30px); transition: 1.2s var(--curve-expo); will-change: transform, opacity; }
+.load-reveal.is-visible { opacity: 1; transform: translateY(0); }
+.delay-1 { transition-delay: 0.2s; }
 
-    background: #f8f5ef;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* ==========================================================================
+   10. MOBILE & TABLET ADAPTATION OVERRIDES (Fluid Edge Cases)
+   ========================================================================== */
+@media (max-width: 991px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .hero-text-block { order: 2; }
+    .hero-visual-block { order: 1; max-width: 500px; margin: 0 auto; width: 100%; }
+    .philosophy-layout { grid-template-columns: 1fr; gap: 0.5rem; }
 }
 
-.img img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-
-/* ================= TEXT CONTENT ================= */
-
-.text {
-    flex: 1;
-    padding: 0 28px;
-}
-
-.text h3 {
-    font-family: "BYekan";
-    font-size: 1.6rem;
-    margin-bottom: 12px;
-}
-
-.text p {
-    font-size: 1.05rem;
-    opacity: .75;
-}
-
-/* ================= FOOTER ================= */
-
-.footer {
-    margin-top: 120px;
-
-    background: linear-gradient(
-        135deg,
-        var(--green),
-        var(--green-dark)
-    );
-
-    color: white;
-
-    text-align: center;
-
-    padding: clamp(60px, 10vw, 90px) 20px;
-}
-
-.footer p {
-    font-size: clamp(1rem, 2.5vw, 1.3rem);
-    margin: 10px 0;
-    line-height: 2;
-}
-
-/* ================= SCROLL ANIMATION ================= */
-
-.reveal {
-    opacity: 0;
-    transform: translateY(40px) scale(.98);
-    transition: opacity .8s ease, transform .8s ease;
-}
-
-.reveal.active {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-}
-
-/* ================= SCROLLBAR ================= */
-
-::-webkit-scrollbar {
-    width: 8px;
-}
-
-::-webkit-scrollbar-track {
-    background: var(--cream);
-}
-
-::-webkit-scrollbar-thumb {
-    background: var(--green);
-    border-radius: 20px;
-}
-
-/* ================= TABLET ================= */
-
-@media (max-width: 1024px) {
-
-    .project {
-        flex-direction: column;
-        align-items: stretch;
+@media (max-width: 768px) {
+    /* Fluid Responsive Mobile Burger Overlay System */
+    .menu-trigger {
+        display: flex; flex-direction: column; gap: 6px; width: 28px; cursor: pointer; z-index: 110;
     }
-
-    .img {
-        width: 100%;
-        min-width: 100%;
-        height: 260px;
+    .burger-line {
+        width: 100%; height: 2px; background-color: var(--clr-ink-dark);
+        transition: var(--transition-fast); transform-origin: left;
     }
-
-    .text {
-        padding: 20px;
+    
+    /* Elegant transition states for mobile hamburger active state */
+    .menu-trigger[aria-expanded="true"] .burger-line:first-child { transform: rotate(45deg); }
+    .menu-trigger[aria-expanded="true"] .burger-line:last-child { transform: rotate(-45deg); width: 100%; }
+    
+    .navigation-menu {
+        position: fixed; inset: 0; background-color: var(--clr-canvas);
+        display: flex; justify-content: center; align-items: center;
+        opacity: 0; visibility: hidden; transition: var(--transition-smooth); z-index: 105;
     }
-}
-
-/* ================= MOBILE ================= */
-
-@media (max-width: 600px) {
-
-    .hero {
-        background-attachment: scroll;
-    }
-
-    .box {
-        border-right: 5px solid var(--foam);
-    }
-
-    .img {
-        height: 220px;
-    }
-
-    .text h3 {
-        font-size: 1.4rem;
-    }
-
-    .text p {
-        font-size: 1rem;
-    }
-
-    .project {
-        padding: 10px;
-    }
+    .navigation-menu.is-open { opacity: 1; visibility: visible; }
+    
+    .nav-list { flex-direction: column; gap: 2.5rem; text-align: center; }
+    .nav-link { font-size: 1.5rem; }
+    .nav-phone-cta { font-size: 1.3rem; padding: 0.8rem 2.5rem; }
+    
+    .footer-container { flex-direction: column; text-align: center; align-items: center; justify-content: center; }
+    .footer-credits { align-items: center; text-align: center; }
+    .author-signature, .copyright-text { text-align: center; }
 }
