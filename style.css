@@ -162,7 +162,13 @@ img { width: 100%; height: auto; display: block; }
 /* ==========================================================================
    6. PHILOSOPHY SCENARIO BLOCK (Elite Minimalist Space Layout)
    ========================================================================== */
-.philosophy-section { background-color: var(--surface-card); padding: clamp(5.5rem, 11vw, 10rem) 0; border-y: 1px solid var(--hairline-border); }
+.philosophy-section { 
+    background-color: var(--surface-card); 
+    padding: clamp(5.5rem, 11vw, 10rem) 0; 
+    /* Standardized W3C valid borders replacing the unofficial border-y shorthand */
+    border-top: 1px solid var(--hairline-border); 
+    border-bottom: 1px solid var(--hairline-border); 
+}
 .meta-structural-label { font-size: 0.9rem; color: var(--brass-architect); margin-bottom: 1.6rem; text-transform: uppercase; }
 .section-heading { font-size: clamp(2.3rem, 3.6vw, 3.8rem); line-height: 1.25; margin-bottom: 2.2rem; }
 
