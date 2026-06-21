@@ -5,19 +5,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="پورتفولیو رسمی مهندس نعمت بهروزی فرد - معمار و ناظر ارشد پایه یک">
+    
+    <!-- ==========================================================================
+       [SECURITY PROTOCOLS] - Enterprise Grade Client-Side Security Rules
+       ========================================================================== -->
+    <!-- Content Security Policy: Blocks XSS, forced injections, and unauthorized assets. 
+         (Note: 'ws:' and 'wss:' are explicitly allowed here to support VS Code Live Server websockets) -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; connect-src 'self' ws: wss:;">
+    <!-- Referrer Policy: Prevents leaking sensitive origin URLs to external sites -->
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
     <title>مهندس نعمت بهروزی فرد | استودیو معماری و نظارت</title>
     
+    <!-- Core Structural Stylesheet -->
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
 </head>
 
 <body>
 
+    <!-- ==========================================================================
+       1. VISUAL ANCHOR: BACKGROUND ARCHITECTURAL GRID LINES
+       ========================================================================== -->
+    <div class="structural-grid-lines" aria-hidden="true">
+        <div class="grid-line"></div>
+        <div class="grid-line"></div>
+        <div class="grid-line"></div>
+    </div>
+
+    <!-- ==========================================================================
+       2. GLOBAL NAVIGATION (Architectural Minimal Header)
+       ========================================================================== -->
     <header class="site-header">
         <div class="nav-container">
             
+            <!-- Brand Identity Terminal -->
             <a href="#" class="nav-logo" aria-label="Architect Portfolio Home">
-                <svg class="structural-logo" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="3.5">
+                <svg class="structural-logo" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="3.8">
                     <line x1="15" y1="85" x2="85" y2="85" />
                     <line x1="35" y1="85" x2="35" y2="25" />
                     <line x1="65" y1="85" x2="65" y2="25" />
@@ -26,6 +50,7 @@
                 <span class="logo-text">نعمت بهروزی فرد</span>
             </a>
 
+            <!-- Premium Kinetic Hamburger Button -->
             <button class="menu-trigger" aria-expanded="false" aria-label="Toggle Navigation Terminal">
                 <div class="burger-box">
                     <span class="burger-line line-top"></span>
@@ -33,12 +58,13 @@
                 </div>
             </button>
 
+            <!-- Cinematic Fullscreen Navigation Veil -->
             <nav class="navigation-veil">
-                <div class="veil-backdrop-lines"></div>
+                <div class="veil-backdrop-aesthetic"></div>
                 <ul class="nav-list">
-                    <li class="nav-item"><a href="#philosophy" class="nav-link">دیدگاه و تخصص</a></li>
-                    <li class="nav-item"><a href="#works" class="nav-link">آثار و پروژه‌ها</a></li>
-                    <li class="nav-item">
+                    <li class="nav-item" style="--item-index: 1;"><a href="#philosophy" class="nav-link">دیدگاه و تخصص</a></li>
+                    <li class="nav-item" style="--item-index: 2;"><a href="#works" class="nav-link">آثار و پروژه‌ها</a></li>
+                    <li class="nav-item" style="--item-index: 3;">
                         <a href="tel:09183110633" class="nav-phone-link">
                             <svg class="icon-tel" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
@@ -52,10 +78,14 @@
         </div>
     </header>
 
+    <!-- ==========================================================================
+       3. HERO LANDING PORTAL (Fluid Kinetic Geometric Layout)
+       ========================================================================== -->
     <main>
         <section class="hero-section">
             <div class="hero-grid">
                 
+                <!-- Textual Hierarchy Node -->
                 <div class="hero-text-block load-reveal">
                     <span class="hero-meta-badge">عضو ارشد سازمان نظام مهندسی کشور</span>
                     <h1 class="hero-title">طراحی، نظارت و اجرا<br><span class="accent-text">پایه یک معماری</span></h1>
@@ -64,6 +94,7 @@
                     </p>
                 </div>
                 
+                <!-- Portrait Hero Visualization -->
                 <div class="hero-visual-block load-reveal delay-1">
                     <div class="minimal-image-frame portrait-ratio">
                         <img src="images/project1.png" alt="Structural architecture master showcase" class="fluid-hero-img">
@@ -74,6 +105,9 @@
             </div>
         </section>
 
+        <!-- ==========================================================================
+           4. DESIGN PHILOSOPHY SECTION (Pure Micro-Structural Geometry)
+           ========================================================================== -->
         <section id="philosophy" class="philosophy-section section-reveal">
             <div class="section-container">
                 <div class="philosophy-layout">
@@ -86,6 +120,7 @@
                             معماری پایدار فراتر از تزئینات سطحی است؛ روندی است از محاسبات دقیق کارکردی و نظارت سخت‌گیرانه کارگاهی. در طول سال‌ها هدایت پروژه‌های مسکونی و اداری، امضای اصلی ما همواره انضباط میلی‌متری نقشه تا اجرا، بهینه‌سازی فضایی و ایمنی مطلق کالبد بنا بوده است.
                         </p>
                         
+                        <!-- Technical Coordinated Grid Matrix -->
                         <div class="technical-matrix">
                             <div class="matrix-node">
                                 <span class="node-title">درجه صلاحیت رسمی</span>
@@ -102,6 +137,9 @@
             </div>
         </section>
 
+        <!-- ==========================================================================
+           5. WORKS GALLERY (Flawless Monolith Pillar Grid for Portrait Images)
+           ========================================================================== -->
         <section id="works" class="works-section section-reveal">
             <div class="section-container">
                 
@@ -112,9 +150,11 @@
 
                 <div class="portrait-monolith-grid">
                     
+                    <!-- Monolith Project Card 01 -->
                     <article class="architecture-monolith-card">
                         <div class="monolith-thumbnail">
                             <img src="images/project2.png" alt="Vertical residential architectural masterpiece" loading="lazy">
+                            <div class="card-hover-veil"></div>
                         </div>
                         <div class="monolith-details">
                             <h3 class="monolith-title">مجتمع مسکونی مهرگان</h3>
@@ -122,9 +162,11 @@
                         </div>
                     </article>
 
+                    <!-- Monolith Project Card 02 -->
                     <article class="architecture-monolith-card">
                         <div class="monolith-thumbnail">
                             <img src="images/project3.png" alt="Luxury minimalist villa architecture" loading="lazy">
+                            <div class="card-hover-veil"></div>
                         </div>
                         <div class="monolith-details">
                             <h3 class="monolith-title">ویلای مدرن مستوفی</h3>
@@ -132,9 +174,11 @@
                         </div>
                     </article>
 
+                    <!-- Monolith Project Card 03 -->
                     <article class="architecture-monolith-card">
                         <div class="monolith-thumbnail">
                             <img src="images/project4.png" alt="Commercial high-rise technical design" loading="lazy">
+                            <div class="card-hover-veil"></div>
                         </div>
                         <div class="monolith-details">
                             <h3 class="monolith-title">ساختمان اداری سینا</h3>
@@ -146,9 +190,12 @@
             </div>
         </section>
 
+        <!-- ==========================================================================
+           6. CLOSING PORTAL / CALM CTA (High-Contrast Architectural Interaction Hub)
+           ========================================================================== -->
         <section class="closing-section section-reveal">
             <div class="section-container cinematic-center">
-                <span class="meta-structural-label">مشاوره و ارزیابی</span>
+                <span class="meta-structural-label" style="color: var(--surface-white);">مشاوره و ارزیابی</span>
                 <h2 class="closing-headline">شروع گفتگو در باب پروژه ساختمانی شما</h2>
                 <p class="closing-text">جهت واگذاری فرآیند نظارت عالیه، طراحی تخصصی فازهای مهندسی یا کارشناسی دقیق املاک مسکونی با ما در ارتباط باشید.</p>
                 
@@ -162,6 +209,9 @@
         </section>
     </main>
 
+    <!-- ==========================================================================
+       7. SITE FOOTER (With Author's Signature)
+       ========================================================================== -->
     <footer class="site-footer">
         <div class="footer-container">
             <div class="footer-identity-block">
@@ -175,10 +225,13 @@
         </div>
     </footer>
 
+    <!-- ==========================================================================
+       8. VANILLA ULTRA-SMOOTH KINETIC ENGINE SCRIPT (Asynchronous & GPU-Fluid)
+       ========================================================================== -->
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             
-            // Mobile Menu Cinematic Toggle Mechanism
+            // Mobile Menu Cinematic Staggered Toggle Mechanism
             const menuTrigger = document.querySelector('.menu-trigger');
             const navigationVeil = document.querySelector('.navigation-veil');
             const navLinks = document.querySelectorAll('.nav-link, .nav-phone-link');
@@ -187,12 +240,13 @@
                 const isExpanded = menuTrigger.getAttribute('aria-expanded') === 'true';
                 menuTrigger.setAttribute('aria-expanded', !isExpanded);
                 navigationVeil.classList.toggle('veil-active');
-                document.body.style.overflow = isExpanded ? '' : 'hidden'; // Lock scrolling when full veil menu is active
+                
+                // Restrict background document scrolling perfectly while overlay is alive
+                document.body.style.overflow = isExpanded ? '' : 'hidden'; 
             };
 
             menuTrigger.addEventListener('click', toggleMenuState);
 
-            // Clean link action routing to shut overlay automatically
             navLinks.forEach(link => {
                 link.addEventListener('click', () => {
                     if (navigationVeil.classList.contains('veil-active')) {
@@ -201,23 +255,27 @@
                 });
             });
 
-            // Fluid Viewport Asynchronous Intersection Observer for 60fps Scroll Reveal
-            const observerConfiguration = { threshold: 0.08, rootMargin: "0px 0px -30px 0px" };
+            // Fluid High-Performance Intersection Observer for Soft Inertial Scroll Reveals
+            const observerConfiguration = { 
+                threshold: 0.05, 
+                rootMargin: "0px 0px -40px 0px" 
+            };
+            
             const viewportObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('viewport-visible');
-                        viewportObserver.unobserve(entry.target); // Optimize resources after reveal event
+                        viewportObserver.unobserve(entry.target); 
                     }
                 });
             }, observerConfiguration);
 
             document.querySelectorAll('.section-reveal').forEach(node => viewportObserver.observe(node));
             
-            // Instantly execute landing reveals on initial asset loading frame
+            // Instantly execute hero entrance on frame loading state completion
             setTimeout(() => {
                 document.querySelectorAll('.load-reveal').forEach(node => node.classList.add('viewport-visible'));
-            }, 150);
+            }, 100);
         });
     </script>
 </body>

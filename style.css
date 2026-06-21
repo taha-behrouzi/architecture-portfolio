@@ -1,23 +1,28 @@
 /* ==========================================================================
-   1. GLOBAL HIGH-END ARCHITECTURAL STYLING TOKENS (CSS CORE ENGINE)
+   1. CALCULATED ECO-MINIMALIST ARCHITECTURAL PALETTE TOKENS
    ========================================================================== */
 :root {
-    /* Pure Psychological Color Balance Matrix (Quiet Luxury Studio Spectrum) */
-    --canvas-base: #FAF9F5;       /* Elite Warm Ivory/Linen White Canvas (Zero Eye Strain) */
-    --surface-card: #FFFFFF;      /* Absolute Crisp White for Layer Elevation Separation */
-    --ink-primary: #121212;       /* Ultra-Sharp Technical Architectural Charcoal Ink */
-    --ink-muted: #5A5A5A;         /* Steel Gray Blueprint Subtext Typography Font Color */
-    --brass-architect: #C1A276;   /* Classic Premium Muted Gold/Brass for Fine Structural Lines */
-    --hairline-border: rgba(18, 18, 18, 0.05); /* Architectural Grid Guide Transparent Divider Lines */
+    /* Meticulously Coordinated Office Identity Palette (Quiet Luxury Harmony) */
+    --canvas-cream: #F7F5F0;       /* Warm, high-end gallery linen/cream base */
+    --surface-white: #FFFFFF;      /* Pure crisp paper white for elevated planes */
+    --ink-black: #0D0D0D;          /* Sharp, definitive technical blueprint charcoal/black */
+    
+    /* Coordinated Custom Office Textures */
+    --grass-green: #2B4436;        /* Masterclass organic lawn/moss green (Deep & Sophisticated) */
+    --coffee-crema: #D0BFB0;       /* Rich cappuccino/espresso foam shade for structural lines */
+    --coffee-crema-light: #F0EAE1; /* Soft dilution of coffee foam for fine subtle fills */
+    --hairline-border: rgba(13, 13, 13, 0.06); /* Fluid layout separation guide trace */
 
-    /* Advanced Cinematic Linear Transitions (Hardware Accelerated Native Interpolations) */
-    --bezier-expo: cubic-bezier(0.16, 1, 0.3, 1); /* Elegant Cinematic Ease Out Expo Curve */
-    --motion-fluid: 0.6s var(--bezier-expo);
-    --motion-snappy: 0.3s var(--bezier-expo);
+    /* Super-Fluid Kinetic Motion Bezier Parameters (Hardware Accelerated 60fps Curves) */
+    --bezier-inertial: cubic-bezier(0.22, 1, 0.36, 1); /* Elegant slow-down curve for elite layout pacing */
+    --bezier-magnetic: cubic-bezier(0.16, 1, 0.3, 1);  /* Fast-entry/Smooth-settle responsive curve */
+    
+    --motion-fluid: 0.75s var(--bezier-inertial);
+    --motion-snappy: 0.35s var(--bezier-magnetic);
 }
 
 /* ==========================================================================
-   2. REFINED HYPER-CLEAN RESET & FLUID MATHEMATICAL BASE SCALING
+   2. REFINED RESET & INTEGRATED MATHEMATICAL DYNAMIC TYPOGRAPHY BOUNDS
    ========================================================================== */
 * {
     margin: 0; padding: 0; box-sizing: border-box;
@@ -27,25 +32,30 @@
 
 html {
     scroll-behavior: smooth;
-    background-color: var(--canvas-base);
+    background-color: var(--canvas-cream);
     text-size-adjust: 100%;
 }
 
+/* Custom Coordinated Scrollbar Engine */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--canvas-cream); }
+::-webkit-scrollbar-thumb { background: var(--coffee-crema); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--grass-green); }
+
 body {
-    /* BNazanin utilized for highly pristine readability layout structures */
     font-family: "BNazanin", "Georgia", serif;
-    color: var(--ink-muted);
-    background-color: var(--canvas-base);
-    line-height: 1.9;
-    /* Flawless Fluid Typography Engine: Recalculates perfectly on every viewport width shift */
-    font-size: clamp(1.05rem, 0.35vw + 0.95rem, 1.25rem);
+    color: var(--ink-black);
+    background-color: var(--canvas-cream);
+    line-height: 1.95;
+    /* Flawless Fluid Typography Scaling Bounds */
+    font-size: clamp(1.05rem, 0.25vw + 0.98rem, 1.22rem);
     overflow-x: hidden;
 }
 
-/* BYekan used exclusively for rigid structural nodes, headers and technical layouts */
+/* BYekan strict enforcement on geometric structural nodes */
 h1, h2, h3, .logo-text, .nav-list, .meta-structural-label, .node-title, .monolith-title, .taha-author-credit, .btn-architectural-action {
     font-family: "BYekan", "Arial", sans-serif;
-    color: var(--ink-primary);
+    color: var(--ink-black);
     font-weight: normal;
     letter-spacing: -0.01em;
 }
@@ -54,21 +64,30 @@ a { text-decoration: none; color: inherit; }
 button { background: none; border: none; font: inherit; color: inherit; }
 img { width: 100%; height: auto; display: block; }
 
-/* Structural Reusable Layout Container */
+/* Structural Reusable Container Wrapper Matrix */
 .section-container {
-    width: 100%; max-width: 1360px; margin: 0 auto;
-    padding-right: clamp(1.5rem, 7vw, 5.5rem);
-    padding-left: clamp(1.5rem, 7vw, 5.5rem);
+    width: 100%; max-width: 1380px; margin: 0 auto;
+    padding-right: clamp(1.5rem, 6.5vw, 6rem);
+    padding-left: clamp(1.5rem, 6.5vw, 6rem);
+    position: relative; z-index: 10;
 }
-.accent-text { color: var(--brass-architect); }
+.accent-text { color: var(--grass-green); font-weight: bold; }
+
+/* Subtle Aesthetic Structural Grid Background Overlay Traces */
+.structural-grid-lines {
+    position: fixed; inset: 0; width: 100%; height: 100%;
+    display: flex; justify-content: space-between;
+    padding: 0 clamp(1.5rem, 6.5vw, 6rem); pointer-events: none; z-index: 1;
+}
+.grid-line { width: 1px; height: 100%; background-color: rgba(13, 13, 13, 0.02); }
 
 /* ==========================================================================
-   3. STRUCTURAL SITE HEADER (Minimal Absolute Matrix Alignment)
+   3. STRUCTURAL SITE HEADER (Minimal Fixed Plane Layer Blur)
    ========================================================================== */
 .site-header {
     position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
-    background-color: rgba(250, 249, 245, 0.85);
-    backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px);
+    background-color: rgba(247, 245, 240, 0.82);
+    backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--hairline-border);
     transition: var(--motion-fluid);
 }
@@ -76,287 +95,312 @@ img { width: 100%; height: auto; display: block; }
 .nav-container {
     max-width: 1440px; margin: 0 auto; display: flex;
     justify-content: space-between; align-items: center;
-    padding: clamp(1.1rem, 2.8vh, 1.9rem) clamp(1.5rem, 7vw, 5.5rem);
+    padding: clamp(1.1rem, 2.5vh, 1.7rem) clamp(1.5rem, 6.5vw, 6rem);
 }
 
-.nav-logo { display: flex; align-items: center; gap: 14px; z-index: 1100; }
-.structural-logo { width: clamp(28px, 3.8vw, 36px); height: auto; color: var(--brass-architect); }
-.logo-text { font-size: clamp(1.25rem, 1.6vw + 0.5rem, 1.6rem); font-weight: bold; }
+.nav-logo { display: flex; align-items: center; gap: 12px; z-index: 1100; transition: var(--motion-snappy); }
+.nav-logo:hover { opacity: 0.8; }
+.structural-logo { width: clamp(26px, 3.5vw, 34px); height: auto; color: var(--grass-green); }
+.logo-text { font-size: clamp(1.2rem, 1.5vw + 0.5rem, 1.55rem); font-weight: bold; }
 
 /* ==========================================================================
-   4. NEW ULTIMATE KINETIC MOBILE MENU & FULLSCREEN OVERLAY VEIL
+   4. NEW ADVANCED DESKTOP NAVIGATION INTERFACE MATRICES
    ========================================================================== */
-/* Premium Custom Desktop Navigation Setup */
-.navigation-veil {
-    display: flex; align-items: center;
-}
-.nav-list {
-    display: flex; align-items: center; gap: clamp(2rem, 4vw, 4rem); font-size: 1.1rem;
-}
-.nav-link {
-    transition: var(--motion-snappy); padding: 6px 0; position: relative;
-}
-.nav-link:hover { color: var(--brass-architect); }
+.navigation-veil { display: flex; align-items: center; }
+.nav-list { display: flex; align-items: center; gap: clamp(2rem, 4vw, 3.8rem); font-size: 1.1rem; }
 
-/* Professional Minimal Integrated Tel Protocol CTA */
+.nav-link {
+    transition: var(--motion-snappy); padding: 6px 0; position: relative; color: rgba(13, 13, 13, 0.8);
+}
+/* Micro-line sliding kinetic reveal state effect */
+.nav-link::after {
+    content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 1.5px;
+    background-color: var(--grass-green); transition: width 0.4s var(--bezier-magnetic);
+}
+.nav-link:hover { color: var(--ink-black); }
+.nav-link:hover::after { width: 100%; }
+
+/* High-Performance Integrated Communication CTA Node */
 .nav-phone-link {
     display: inline-flex; align-items: center; gap: 10px;
-    border: 1px solid var(--ink-primary); color: var(--ink-primary);
-    padding: clamp(0.45rem, 1vh, 0.65rem) clamp(1.3rem, 2.2vw, 2rem);
+    border: 1px solid var(--grass-green); color: var(--grass-green);
+    background-color: transparent;
+    padding: clamp(0.45rem, 1vh, 0.6rem) clamp(1.2rem, 2vw, 1.8rem);
     border-radius: 1px; transition: var(--motion-fluid); font-weight: bold;
 }
-.icon-tel { width: 18px; height: 18px; }
+.icon-tel { width: 16px; height: 16px; }
 .nav-phone-link:hover {
-    background-color: var(--ink-primary); color: var(--canvas-base);
+    background-color: var(--grass-green); color: var(--surface-white);
     transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(43, 68, 54, 0.15);
 }
 
-/* Masterpiece Desktop Hidden Menu Trigger Element */
 .menu-trigger { display: none; }
 
 /* ==========================================================================
-   5. FLUID HERO CANVAS INTERACTION AREA
+   5. FLUID INERTIAL HERO SEGMENT FRAME (Calculated Proportions)
    ========================================================================== */
 .hero-section {
     min-height: 100vh; display: flex; align-items: center;
-    padding-top: clamp(7rem, 13vh, 11rem); padding-bottom: clamp(3.5rem, 7vh, 7rem);
-    padding-right: clamp(1.5rem, 7vw, 5.5rem); padding-left: clamp(1.5rem, 7vw, 5.5rem);
-    max-width: 1440px; margin: 0 auto;
+    padding-top: clamp(7rem, 12vh, 10rem); padding-bottom: clamp(3.5rem, 6vh, 6rem);
+    padding-right: clamp(1.5rem, 6.5vw, 6rem); padding-left: clamp(1.5rem, 6.5vw, 6rem);
+    max-width: 1440px; margin: 0 auto; position: relative;
 }
 
 .hero-grid {
-    display: grid; grid-template-columns: 1.25fr 0.75fr; gap: clamp(3rem, 6vw, 7rem);
+    display: grid; grid-template-columns: 1.2fr 0.8fr; gap: clamp(3rem, 6vw, 6.5rem);
     align-items: center; width: 100%;
 }
 
 .hero-meta-badge {
-    display: inline-block; font-family: "BYekan"; font-size: 0.95rem;
-    color: var(--brass-architect); margin-bottom: clamp(1.1rem, 2.2vh, 2rem);
+    display: inline-block; font-family: "BYekan"; font-size: 0.92rem;
+    color: var(--grass-green); background-color: var(--coffee-crema-light);
+    padding: 4px 14px; border-radius: 2px; margin-bottom: clamp(1.1rem, 2vh, 1.8rem);
 }
 
 .hero-title {
-    font-size: clamp(2.9rem, 5.8vw + 0.5rem, 5.2rem);
-    line-height: 1.15; margin-bottom: clamp(1.3rem, 3.2vh, 2.4rem);
+    font-size: clamp(2.8rem, 5.5vw + 0.5rem, 4.8rem);
+    line-height: 1.18; margin-bottom: clamp(1.3rem, 3vh, 2.2rem);
+    color: var(--ink-black);
 }
 
 .hero-description {
-    font-size: clamp(1.2rem, 0.5vw + 1.05rem, 1.45rem);
-    max-width: 600px; text-align: justify; color: var(--ink-muted);
+    font-size: clamp(1.15rem, 0.4vw + 1.02rem, 1.4rem);
+    max-width: 580px; text-align: justify; color: rgba(13, 13, 13, 0.72);
 }
 
-/* Meticulous Editorial Image Framing Protocol */
-.minimal-image-frame { position: relative; width: 100%; overflow: hidden; background-color: #EEE; }
-.minimal-image-frame.portrait-ratio {
-    /* Pure portrait layout structure framework alignment */
-    aspect-ratio: 3 / 4;
+/* Luxurious Fine Image Framing Controls with Smooth Hover Easing Scale */
+.minimal-image-frame { 
+    position: relative; width: 100%; overflow: hidden; 
+    background-color: var(--coffee-crema-light);
+    border: 1px solid var(--coffee-crema);
+    box-shadow: 0 10px 30px rgba(13, 13, 13, 0.03);
 }
+.minimal-image-frame.portrait-ratio { aspect-ratio: 3 / 4; }
+
 .fluid-hero-img {
     width: 100%; height: 100%; object-fit: cover;
-    filter: grayscale(8%) contrast(101%);
+    filter: contrast(100.5%);
+    transition: transform 1.2s var(--bezier-inertial);
 }
+.minimal-image-frame:hover .fluid-hero-img { transform: scale(1.035); }
+
 .hairline-overlay {
-    position: absolute; inset: clamp(12px, 2.5vw, 24px);
-    border: 1px solid rgba(255, 255, 255, 0.35); pointer-events: none;
+    position: absolute; inset: clamp(12px, 2.2vw, 22px);
+    border: 1px solid rgba(255, 255, 255, 0.4); pointer-events: none;
+    z-index: 5;
 }
 
 /* ==========================================================================
-   6. PHILOSOPHY SCENARIO BLOCK (Elite Minimalist Space Layout)
+   6. STATEMENT BIOGRAPHY PLATFORM (Clean Structured Negative Space)
    ========================================================================== */
 .philosophy-section { 
-    background-color: var(--surface-card); 
-    padding: clamp(5.5rem, 11vw, 10rem) 0; 
-    /* Standardized W3C valid borders replacing the unofficial border-y shorthand */
+    background-color: var(--surface-white); 
+    padding: clamp(5rem, 10vw, 9rem) 0; 
     border-top: 1px solid var(--hairline-border); 
     border-bottom: 1px solid var(--hairline-border); 
 }
-.meta-structural-label { font-size: 0.9rem; color: var(--brass-architect); margin-bottom: 1.6rem; text-transform: uppercase; }
-.section-heading { font-size: clamp(2.3rem, 3.6vw, 3.8rem); line-height: 1.25; margin-bottom: 2.2rem; }
 
-.philosophy-layout {
-    display: grid; grid-template-columns: 0.35fr 1.65fr; gap: clamp(1.5rem, 4.5vw, 4.5rem);
-}
+.philosophy-layout { display: grid; grid-template-columns: 0.35fr 1.65fr; gap: clamp(1.5rem, 4vw, 4rem); }
+.meta-structural-label { font-size: 0.88rem; color: var(--coffee-crema); font-weight: bold; margin-bottom: 1.5rem; }
+.section-heading { font-size: clamp(2.2rem, 3.5vw, 3.5rem); line-height: 1.28; margin-bottom: 2rem; }
 
 .paragraph-leading {
-    font-size: clamp(1.3rem, 0.6vw + 1.15rem, 1.6rem);
-    line-height: 2.05; color: var(--ink-primary); text-align: justify;
-    margin-bottom: clamp(2.8rem, 5.5vh, 4.5rem); max-width: 900px;
+    font-size: clamp(1.25rem, 0.5vw + 1.1rem, 1.5rem);
+    line-height: 2.05; color: var(--ink-black); text-align: justify;
+    margin-bottom: clamp(2.5rem, 5vh, 4rem); max-width: 880px;
 }
 
-/* Technical Blueprint-Style Info Grid Alignment */
+/* Blueprint Architecture Parameter Data Row Node System */
 .technical-matrix {
-    display: flex; flex-wrap: wrap; gap: clamp(2.5rem, 6vw, 6rem);
-    border-top: 1px solid var(--hairline-border); padding-top: clamp(2.2rem, 4.5vh, 4rem);
+    display: flex; flex-wrap: wrap; gap: clamp(2.5rem, 5vw, 5rem);
+    border-top: 1px solid var(--coffee-crema-light); padding-top: clamp(2rem, 4vh, 3.5rem);
 }
-.matrix-node { display: flex; flex-direction: column; gap: 8px; }
-.node-title { font-size: 0.95rem; color: var(--ink-muted); }
-.node-value { font-size: 1.3rem; color: var(--ink-primary); font-weight: bold; }
+.matrix-node { display: flex; flex-direction: column; gap: 6px; }
+.node-title { font-size: 0.92rem; color: var(--coffee-crema); font-weight: bold; }
+.node-value { font-size: 1.25rem; color: var(--ink-black); font-weight: bold; }
 
 /* ==========================================================================
-   7. PORTRAIT GALLERY ENGINE (Masterful Core Fix For Vertical Images)
+   7. THE ABSOLUTE PILLAR MONOLITH GRID (Flawless Portrait Asset Housing)
    ========================================================================== */
-.works-section { padding: clamp(5.5rem, 11vw, 10rem) 0; }
-.works-header { margin-bottom: clamp(3.5rem, 6.5vh, 5.5rem); }
+.works-section { padding: clamp(5rem, 10vw, 9rem) 0; }
+.works-header { margin-bottom: clamp(3rem, 6vh, 5rem); }
 
-/* THE VERTICAL PILLAR MONOLITH GRID SYSTEM
-   Specifically tailored to present vertical (portrait) imagery perfectly. 
-   Images appear tall, robust, and mathematically pristine like real structural pillars.
-*/
 .portrait-monolith-grid {
     display: grid;
-    /* Liquid Responsive Layout without Breakpoint Fractures */
-    grid-template-columns: repeat(auto-fit, minmax(clamp(270px, 22vw, 380px), 1fr));
+    /* Clean Fluid grid handling architecture avoiding breakpoint fractures completely */
+    grid-template-columns: repeat(auto-fit, minmax(clamp(280px, 24vw, 380px), 1fr));
     gap: clamp(2rem, 4.5vw, 4.5rem);
 }
 
 .architecture-monolith-card {
-    display: flex; flex-direction: column; gap: 22px;
-    transition: var(--motion-fluid); will-change: transform;
+    display: flex; flex-direction: column; gap: 20px;
+    transition: transform 0.8s var(--bezier-inertial); will-change: transform;
 }
 
 .monolith-thumbnail {
-    width: 100%;
-    /* Forced Structural Vertical Orientation Bounds */
-    aspect-ratio: 3 / 4; 
+    width: 100%; aspect-ratio: 3 / 4; /* Locked absolute high-end vertical gallery box */
     overflow: hidden; position: relative;
-    background-color: var(--canvas-base);
+    background-color: var(--coffee-crema-light);
     border: 1px solid var(--hairline-border);
 }
 
 .monolith-thumbnail img {
     width: 100%; height: 100%; object-fit: cover;
-    transition: transform 0.8s var(--bezier-expo);
+    transition: transform 0.95s var(--bezier-inertial);
 }
 
-/* Masterful Ultra-Elegant Micro-Movements On Viewport Interactions */
-.architecture-monolith-card:hover .monolith-thumbnail img { transform: scale(1.05); }
+/* Soft color veil fading away beautifully on interaction */
+.card-hover-veil {
+    position: absolute; inset: 0; background-color: rgba(43, 68, 54, 0.04);
+    opacity: 1; transition: opacity 0.5s var(--bezier-magnetic); pointer-events: none;
+}
+
+/* Exquisite Buttery Soft Interactive Card Micro-Movements */
+.architecture-monolith-card:hover .monolith-thumbnail img { transform: scale(1.045); }
+.architecture-monolith-card:hover .card-hover-veil { opacity: 0; }
 .architecture-monolith-card:hover { transform: translateY(-6px); }
 
-.monolith-details { display: flex; flex-direction: column; gap: 6px; }
-.monolith-title { font-size: 1.35rem; color: var(--ink-primary); }
-.monolith-subtitle { font-size: 0.95rem; color: var(--ink-muted); }
+.monolith-details { display: flex; flex-direction: column; gap: 5px; }
+.monolith-title { font-size: 1.3rem; color: var(--ink-black); transition: color 0.3s; }
+.architecture-monolith-card:hover .monolith-title { color: var(--grass-green); }
+.monolith-subtitle { font-size: 0.92rem; color: rgba(13, 13, 13, 0.6); }
 
 /* ==========================================================================
-   8. SYSTEM PORTAL PORT / CLOSING PORTAL (Sleek Centered Interaction Box)
+   8. FOREST MOSS CALL-ACTION PORTAL (Premium High-Contrast Focal Box)
    ========================================================================== */
-.closing-section { padding: clamp(6.5rem, 13vw, 11rem) 0; background-color: var(--surface-card); border-top: 1px solid var(--hairline-border); }
-.cinematic-center { max-width: 800px; margin: 0 auto; text-align: center; display: flex; flex-direction: column; align-items: center; }
+.closing-section { 
+    padding: clamp(6rem, 11vw, 10rem) 0; 
+    background-color: var(--grass-green); /* Switched beautifully to the premium signature green */
+    border-top: 1px solid var(--hairline-border); 
+}
+.cinematic-center { max-width: 820px; margin: 0 auto; text-align: center; display: flex; flex-direction: column; align-items: center; }
 
-.closing-headline { font-size: clamp(2.3rem, 4vw, 4rem); margin-bottom: 1.6rem; }
-.closing-text { font-size: 1.3rem; color: var(--ink-muted); margin-bottom: clamp(2.8rem, 5.5vh, 4rem); }
+.closing-headline { font-size: clamp(2.1rem, 3.8vw, 3.6rem); margin-bottom: 1.5rem; color: var(--canvas-cream); }
+.closing-text { font-size: 1.22rem; color: var(--coffee-crema-light); opacity: 0.9; margin-bottom: clamp(2.5rem, 5vh, 3.8rem); }
 
-/* Rigid Action Component Element */
+/* Solid Kinetic Interaction Block Trigger */
 .btn-architectural-action {
     display: inline-flex; align-items: center; gap: 16px;
-    background-color: var(--ink-primary); color: var(--canvas-base);
-    padding: clamp(0.95rem, 2.2vh, 1.3rem) clamp(2.2rem, 4.5vw, 3.8rem);
-    font-size: 1.25rem; border-radius: 1px; transition: var(--motion-fluid);
+    background-color: var(--ink-black); color: var(--surface-white);
+    padding: clamp(0.9rem, 2vh, 1.2rem) clamp(2.2rem, 4vw, 3.5rem);
+    font-size: 1.2rem; border-radius: 1px; transition: var(--motion-fluid);
+    box-shadow: 0 10px 30px rgba(13, 13, 13, 0.2);
 }
-.action-arrow { width: 22px; height: 22px; transition: transform 0.35s var(--bezier-expo); }
-.btn-architectural-action:hover { background-color: var(--brass-architect); transform: translateY(-4px); }
-.btn-architectural-action:hover .action-arrow { transform: translateX(-8px); }
+.action-arrow { width: 20px; height: 20px; transition: transform 0.4s var(--bezier-magnetic); }
+.btn-architectural-action:hover { background-color: var(--surface-white); color: var(--ink-black); transform: translateY(-4px); }
+.btn-architectural-action:hover .action-arrow { transform: translateX(-6px); }
 
 /* ==========================================================================
-   9. SITE FOOTER FRAME (With Taha Behroozi Integrated Credit Blueprint)
+   9. DEEP FOOTER MATRIX BASE (With Taha Behroozi Signed Author Node)
    ========================================================================== */
 .site-footer {
-    background-color: var(--canvas-base); padding: clamp(3.5rem, 6.5vh, 5.5rem) 0;
-    border-top: 1px solid var(--hairline-border);
+    background-color: var(--canvas-cream); padding: clamp(3.5rem, 6vh, 5rem) 0;
+    border-top: 1px solid var(--hairline-border); position: relative; z-index: 10;
 }
 .footer-container {
     max-width: 1440px; margin: 0 auto; display: flex; flex-wrap: wrap;
-    justify-content: space-between; align-items: flex-start; gap: 35px;
-    padding: 0 clamp(1.5rem, 7vw, 5.5rem);
+    justify-content: space-between; align-items: flex-start; gap: 30px;
+    padding: 0 clamp(1.5rem, 6.5vw, 6rem);
 }
 
-.footer-brand-title { font-size: 1.35rem; font-weight: bold; display: block; margin-bottom: 8px; color: var(--ink-primary); }
-.footer-brand-sub { font-size: 0.95rem; color: var(--ink-muted); }
+.footer-brand-title { font-size: 1.3rem; font-weight: bold; display: block; margin-bottom: 6px; color: var(--ink-black); }
+.footer-brand-sub { font-size: 0.92rem; color: rgba(13, 13, 13, 0.55); }
 
-.footer-signature-block { text-align: left; display: flex; flex-direction: column; gap: 6px; }
-/* Clean Premium Dynamic Credit Hierarchy styling variables for Taha Behroozi */
-.taha-author-credit { font-size: 1.05rem; color: var(--ink-primary); font-weight: bold; text-align: right; }
-.legal-copyright { font-size: 0.85rem; color: var(--ink-muted); text-align: right; }
+.footer-signature-block { text-align: left; display: flex; flex-direction: column; gap: 5px; }
+/* Clean Pristine Authority variables styling for Taha Behroozi Engineering Credits */
+.taha-author-credit { font-size: 1.02rem; color: var(--grass-green); font-weight: bold; text-align: right; }
+.legal-copyright { font-size: 0.82rem; color: rgba(13, 13, 13, 0.5); text-align: right; }
 
 /* ==========================================================================
-   10. HIGH-PERFORMANCE LIQUID ENGINE ANIMATIONS (Scroll Revelations Engine)
+   10. HARDWARE ACCELERATED VIEWPORT TRANSITION MACHINERY (Scroll Engine)
    ========================================================================== */
-.section-reveal { opacity: 0; transform: translateY(28px); transition: 1s var(--bezier-expo); will-change: transform, opacity; }
+.section-reveal { 
+    opacity: 0; transform: translateY(30px); 
+    transition: opacity 0.95s var(--bezier-inertial), transform 0.95s var(--bezier-inertial); 
+    will-change: transform, opacity; 
+}
 .section-reveal.viewport-visible { opacity: 1; transform: translateY(0); }
 
-.load-reveal { opacity: 0; transform: translateY(35px); transition: 1.3s var(--bezier-expo); will-change: transform, opacity; }
+.load-reveal { 
+    opacity: 0; transform: translateY(35px); 
+    transition: opacity 1.25s var(--bezier-inertial), transform 1.25s var(--bezier-inertial); 
+    will-change: transform, opacity; 
+}
 .load-reveal.viewport-visible { opacity: 1; transform: translateY(0); }
-.delay-1 { transition-delay: 0.22s; }
+.delay-1 { transition-delay: 0.2s; }
 
 /* ==========================================================================
-   11. THE MASTERPIECE MOBILE FLAWLESS ADAPTATION MATRIX (Responsive Core)
+   11. THE LIQUID RESPONSIVE BREAKPOINT GRID OVERHAUL MATRIX
    ========================================================================== */
-@media (max-width: 991px) {
-    .hero-grid { grid-template-columns: 1fr; gap: 3.5rem; }
-    .hero-text-block { order: 2; }
-    .hero-visual-block { order: 1; max-width: 480px; margin: 0 auto; width: 100%; }
-    .philosophy-layout { grid-template-columns: 1fr; gap: 0.8rem; }
+@media (max-width: 1024px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 4rem; text-align: center; }
+    .hero-text-block { order: 2; display: flex; flex-direction: column; align-items: center; }
+    .hero-description { text-align: center; }
+    .hero-visual-block { order: 1; max-width: 440px; margin: 0 auto; width: 100%; }
+    .philosophy-layout { grid-template-columns: 1fr; gap: 0.5rem; }
+    .technical-matrix { justify-content: center; gap: 3rem; }
 }
 
-/* Critical Overhaul: Flawless Mobile Menu System Breakpoint Edge-Cases */
+/* Sophisticated Kinetic Overlay Deployment (Mobile Fluid Edge Cases) */
 @media (max-width: 768px) {
-    
-    /* Reveal Kinetic Hamburger Button Trigger Area */
+    .structural-grid-lines { display: none; } /* De-clutter fine line arrays on tight frames */
+
+    /* Beautiful Minimal Responsive Trigger Action Box */
     .menu-trigger {
-        display: block; position: relative; width: 32px; height: 32px;
-        z-index: 2000; cursor: pointer; transition: var(--motion-snappy);
+        display: block; position: relative; width: 30px; height: 30px;
+        z-index: 2000; cursor: pointer;
     }
     .burger-box {
-        position: relative; width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; gap: 7px;
+        position: relative; width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; gap: 6px;
     }
     .burger-line {
-        width: 100%; height: 2px; background-color: var(--ink-primary);
-        transition: transform 0.4s var(--bezier-expo), background-color 0.4s var(--bezier-expo);
+        width: 100%; height: 2px; background-color: var(--ink-black);
+        transition: transform 0.4s var(--bezier-magnetic), background-color 0.4s var(--bezier-magnetic);
         transform-origin: center;
     }
 
-    /* Morphing Hamburger Line States into Absolute Minimal Symmetric Structural Close X Cross */
-    .menu-trigger[aria-expanded="true"] .line-top {
-        transform: translateY(4.5px) rotate(45deg);
-        background-color: var(--ink-primary);
-    }
-    .menu-trigger[aria-expanded="true"] .line-bottom {
-        transform: translateY(-4.5px) rotate(-45deg);
-        background-color: var(--ink-primary);
-    }
+    /* Elegant Cross-over morph mechanics to switch states smoothly */
+    .menu-trigger[aria-expanded="true"] .line-top { transform: translateY(4px) rotate(45deg); }
+    .menu-trigger[aria-expanded="true"] .line-bottom { transform: translateY(-4px) rotate(-45deg); }
 
-    /* High-End Cinematic Fullscreen Veil Menu Overhaul System */
+    /* Premium Fullscreen Veil Overlay Architecture with Coffee Crema Contrast */
     .navigation-veil {
         position: fixed; inset: 0; width: 100%; height: 100svh;
-        background-color: rgba(250, 249, 245, 0.98); /* Solid Canvas Background with Ultra-Crisp Fluid opacity */
-        backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+        background-color: var(--canvas-cream);
         display: flex; flex-direction: column; justify-content: center; align-items: center;
         opacity: 0; visibility: hidden;
-        transform: translateY(-15px); /* Gentle elegant downwards sliding entrance physics */
-        transition: opacity 0.5s var(--bezier-expo), visibility 0.5s var(--bezier-expo), transform 0.5s var(--bezier-expo);
+        transform: scale(1.02); /* Gentle scaling kinetic entry simulation */
+        transition: opacity 0.55s var(--bezier-inertial), visibility 0.55s var(--bezier-inertial), transform 0.55s var(--bezier-inertial);
         z-index: 1500;
     }
     
-    /* Cinematic Structural Layout Line Inside Active Mobile Overlay Menu View */
-    .veil-backdrop-lines {
-        position: absolute; top: 0; left: 20%; width: 1px; height: 100%;
-        background-color: var(--hairline-border); pointer-events: none;
+    .veil-backdrop-aesthetic {
+        position: absolute; bottom: 0; right: 0; width: 100%; height: 45%;
+        background-color: var(--coffee-crema-light); opacity: 0.4; clip-path: polygon(0 100%, 100% 100%, 100% 0);
+        pointer-events: none;
     }
 
-    /* Activated State For Fullscreen Navigation Veil Frame Overlay */
-    .navigation-veil.veil-active {
-        opacity: 1; visibility: visible; transform: translateY(0);
+    .navigation-veil.veil-active { opacity: 1; visibility: visible; transform: scale(1); }
+
+    /* Elite Staggered Fade-In Link Lists Motion Layout Engine */
+    .nav-list { flex-direction: column; gap: 2.8rem; text-align: center; width: 100%; }
+    
+    .nav-item {
+        opacity: 0; transform: translateY(15px);
+        transition: opacity 0.5s var(--bezier-magnetic), transform 0.5s var(--bezier-magnetic);
+    }
+    /* Calculating precise stagger delay times mathematically based on HTML inline index tokens */
+    .navigation-veil.veil-active .nav-item {
+        opacity: 1; transform: translateY(0);
+        transition-delay: calc(var(--item-index) * 0.08s + 0.15s);
     }
 
-    /* Restructuring Link Nodes Internally Inside The Overlay Interface Screen Frame Viewport */
-    .nav-list {
-        flex-direction: column; gap: 3rem; text-align: center; width: 100%; padding: 0 2rem;
-    }
-    .nav-link { font-size: 1.7rem; display: block; width: max-content; margin: 0 auto; }
-    .nav-phone-link {
-        font-size: 1.2rem; padding: 0.9rem 2.5rem; display: inline-flex; width: auto; margin-top: 1rem;
-    }
+    .nav-link { font-size: 1.6rem; }
+    .nav-phone-link { font-size: 1.15rem; padding: 0.8rem 2.2rem; margin-top: 0.5rem; }
 
-    /* Global Dynamic Grid Footnotes Adjustments Matrix For Mobile Devices */
-    .footer-container { flex-direction: column; text-align: center; align-items: center; justify-content: center; gap: 25px; }
+    /* Fluid Footer Centering Bounds */
+    .footer-container { flex-direction: column; text-align: center; align-items: center; justify-content: center; gap: 20px; }
     .footer-signature-block { align-items: center; text-align: center; }
     .taha-author-credit, .legal-copyright { text-align: center; }
 }
