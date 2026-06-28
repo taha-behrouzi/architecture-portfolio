@@ -4,185 +4,239 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="پورتفولیو رسمی مهندس نعمت بهروزی فرد - معمار و ناظر ارشد پایه یک">
-    
-    <!-- ==========================================================================
-       [SECURITY PROTOCOLS] - Enterprise Grade Client-Side Security Rules
-       ========================================================================== -->
-    <!-- Content Security Policy: Blocks XSS, forced injections, and unauthorized assets. 
-         (Note: 'ws:' and 'wss:' are explicitly allowed here to support VS Code Live Server websockets) -->
+    <meta name="description" content="پورتفولیو رسمی مهندس نعمت بهروزی فرد — معمار و ناظر ارشد پایه یک">
+    <meta name="theme-color" content="#F5F1EB">
+
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; connect-src 'self' ws: wss:;">
-    <!-- Referrer Policy: Prevents leaking sensitive origin URLs to external sites -->
     <meta name="referrer" content="strict-origin-when-cross-origin">
 
     <title>مهندس نعمت بهروزی فرد | استودیو معماری و نظارت</title>
-    
-    <!-- Core Structural Stylesheet -->
+
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
 </head>
 
 <body>
 
-    <!-- ==========================================================================
-       1. VISUAL ANCHOR: BACKGROUND ARCHITECTURAL GRID LINES
-       ========================================================================== -->
-    <div class="structural-grid-lines" aria-hidden="true">
-        <div class="grid-line"></div>
-        <div class="grid-line"></div>
-        <div class="grid-line"></div>
+    <!-- Skip to Content -->
+    <a href="#hero" class="skip-link">رفتن به محتوای اصلی</a>
+
+    <!-- Preloader -->
+    <div class="preloader" id="preloader" aria-hidden="true">
+        <div class="preloader-inner">
+            <svg class="preloader-logo" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="15" y1="85" x2="85" y2="85" />
+                <line x1="35" y1="85" x2="35" y2="25" />
+                <line x1="65" y1="85" x2="65" y2="25" />
+                <path d="M25 25 Q50 5 75 25" stroke-width="1.8" />
+            </svg>
+            <div class="preloader-bar"><div class="preloader-bar-fill"></div></div>
+        </div>
     </div>
 
-    <!-- ==========================================================================
-       2. GLOBAL NAVIGATION (Architectural Minimal Header)
-       ========================================================================== -->
-    <header class="site-header">
-        <div class="nav-container">
-            
-            <!-- Brand Identity Terminal -->
-            <a href="#" class="nav-logo" aria-label="Architect Portfolio Home">
-                <svg class="structural-logo" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="3.8">
+    <!-- Background Architectural Grid -->
+    <div class="arch-grid-bg" aria-hidden="true">
+        <div class="arch-grid-line"></div>
+        <div class="arch-grid-line"></div>
+        <div class="arch-grid-line"></div>
+        <div class="arch-grid-line"></div>
+    </div>
+
+    <!-- Ambient Light Orbs -->
+    <div class="ambient-lights" aria-hidden="true">
+        <div class="ambient-orb orb-1"></div>
+        <div class="ambient-orb orb-2"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="site-header" id="siteHeader">
+        <div class="header-inner">
+            <a href="#" class="header-brand" aria-label="صفحه اصلی">
+                <svg class="brand-icon" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="3.8">
                     <line x1="15" y1="85" x2="85" y2="85" />
                     <line x1="35" y1="85" x2="35" y2="25" />
                     <line x1="65" y1="85" x2="65" y2="25" />
                     <path d="M25 25 Q50 5 75 25" stroke-width="2.5" />
                 </svg>
-                <span class="logo-text">نعمت بهروزی فرد</span>
+                <span class="brand-name">نعمت بهروزی فرد</span>
             </a>
 
-            <!-- Premium Kinetic Hamburger Button -->
-            <button class="menu-trigger" aria-expanded="false" aria-label="Toggle Navigation Terminal">
-                <div class="burger-box">
-                    <span class="burger-line line-top"></span>
-                    <span class="burger-line line-bottom"></span>
-                </div>
-            </button>
-
-            <!-- Cinematic Fullscreen Navigation Veil -->
-            <nav class="navigation-veil">
-                <div class="veil-backdrop-aesthetic"></div>
-                <ul class="nav-list">
-                    <li class="nav-item" style="--item-index: 1;"><a href="#philosophy" class="nav-link">دیدگاه و تخصص</a></li>
-                    <li class="nav-item" style="--item-index: 2;"><a href="#works" class="nav-link">آثار و پروژه‌ها</a></li>
-                    <li class="nav-item" style="--item-index: 3;">
-                        <a href="tel:09183110633" class="nav-phone-link">
-                            <svg class="icon-tel" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            <nav class="desktop-nav" aria-label="ناوبری اصلی">
+                <ul class="desktop-nav-list">
+                    <li><a href="#philosophy" class="nav-link">دیدگاه و تخصص</a></li>
+                    <li><a href="#works" class="nav-link">آثار و پروژه‌ها</a></li>
+                    <li>
+                        <a href="tel:09183110633" class="nav-cta">
+                            <svg class="cta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.58 2.81.7A2 2 0 0 1 22 16.92z"/>
                             </svg>
-                            <span>ارتباط مستقیم با مهندس</span>
+                            <span>تماس مستقیم</span>
                         </a>
                     </li>
                 </ul>
             </nav>
 
+            <button class="mobile-menu-btn" id="menuBtn" aria-expanded="false" aria-label="منوی ناوبری">
+                <span class="menu-line"></span>
+                <span class="menu-line"></span>
+            </button>
         </div>
     </header>
 
-    <!-- ==========================================================================
-       3. HERO LANDING PORTAL (Fluid Kinetic Geometric Layout)
-       ========================================================================== -->
+    <!-- Mobile Navigation Overlay -->
+    <div class="mobile-nav-overlay" id="mobileNav" aria-hidden="true">
+        <div class="mobile-nav-bg"></div>
+        <ul class="mobile-nav-list">
+            <li class="mobile-nav-item"><a href="#philosophy" class="mobile-nav-link">دیدگاه و تخصص</a></li>
+            <li class="mobile-nav-item"><a href="#works" class="mobile-nav-link">آثار و پروژه‌ها</a></li>
+            <li class="mobile-nav-item">
+                <a href="tel:09183110633" class="mobile-nav-link mobile-nav-cta">
+                    <svg class="cta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.58 2.81.7A2 2 0 0 1 22 16.92z"/>
+                    </svg>
+                    <span>تماس مستقیم با مهندس</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
     <main>
-        <section class="hero-section">
-            <div class="hero-grid">
-                
-                <!-- Textual Hierarchy Node -->
-                <div class="hero-text-block load-reveal">
-                    <span class="hero-meta-badge">عضو ارشد سازمان نظام مهندسی کشور</span>
-                    <h1 class="hero-title">طراحی، نظارت و اجرا<br><span class="accent-text">پایه یک معماری</span></h1>
+
+        <!-- Hero Section -->
+        <section class="hero" id="hero">
+            <div class="hero-inner">
+                <div class="hero-content" data-animate="hero">
+                    <div class="hero-badge">
+                        <span class="badge-dot"></span>
+                        عضو ارشد سازمان نظام مهندسی کشور
+                    </div>
+                    <h1 class="hero-title">
+                        <span class="title-line">طراحی، نظارت</span>
+                        <span class="title-line">و اجرا</span>
+                        <span class="title-accent">پایه یک معماری</span>
+                    </h1>
                     <p class="hero-description">
                         مجموعه مستندات حرفه‌ای و کاتالوگ آثار مهندس نعمت بهروزی فرد. تبلور هندسه بی‌پیرایه، ثبات ساختاری و کمال ملموس در فرآیند نظارت کلان ساختمانی.
                     </p>
-                </div>
-                
-                <!-- Portrait Hero Visualization -->
-                <div class="hero-visual-block load-reveal delay-1">
-                    <div class="minimal-image-frame portrait-ratio">
-                        <img src="images/project1.png" alt="Structural architecture master showcase" class="fluid-hero-img">
-                        <div class="hairline-overlay"></div>
+                    <div class="hero-actions">
+                        <a href="#works" class="btn-primary">
+                            <span>مشاهده آثار</span>
+                            <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+                            </svg>
+                        </a>
+                        <a href="#philosophy" class="btn-ghost">دیدگاه مهندسی</a>
                     </div>
                 </div>
-
+                <div class="hero-visual" data-animate="hero-visual">
+                    <div class="hero-image-frame">
+                        <img src="images/project1.png" alt="نمایشگاه معماری ساختاری" class="hero-image" loading="eager">
+                        <div class="image-frame-border"></div>
+                        <div class="image-shine"></div>
+                    </div>
+                    <div class="hero-stat-card">
+                        <span class="stat-number">۱۵+</span>
+                        <span class="stat-label">سال تجربه</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-scroll-indicator" aria-hidden="true">
+                <div class="scroll-line"></div>
+                <span class="scroll-text">اسکرول</span>
             </div>
         </section>
 
-        <!-- ==========================================================================
-           4. DESIGN PHILOSOPHY SECTION (Pure Micro-Structural Geometry)
-           ========================================================================== -->
-        <section id="philosophy" class="philosophy-section section-reveal">
+        <!-- Philosophy Section -->
+        <section id="philosophy" class="philosophy" data-section>
             <div class="section-container">
-                <div class="philosophy-layout">
-                    
-                    <div class="meta-structural-label">۰۱ / بیانیه مهندسی</div>
-                    
+                <div class="philosophy-grid">
+                    <div class="philosophy-label">
+                        <span class="section-number">۰۱</span>
+                        <span class="section-divider"></span>
+                        <span class="section-caption">بیانیه مهندسی</span>
+                    </div>
                     <div class="philosophy-content">
-                        <h2 class="section-heading">صراحت خطوط، <span class="accent-text">اصالت ساختار</span>.</h2>
-                        <p class="paragraph-leading">
+                        <h2 class="section-heading" data-animate="heading">
+                            صراحت خطوط،
+                            <span class="heading-accent">اصالت ساختار</span>.
+                        </h2>
+                        <p class="section-text" data-animate="text">
                             معماری پایدار فراتر از تزئینات سطحی است؛ روندی است از محاسبات دقیق کارکردی و نظارت سخت‌گیرانه کارگاهی. در طول سال‌ها هدایت پروژه‌های مسکونی و اداری، امضای اصلی ما همواره انضباط میلی‌متری نقشه تا اجرا، بهینه‌سازی فضایی و ایمنی مطلق کالبد بنا بوده است.
                         </p>
-                        
-                        <!-- Technical Coordinated Grid Matrix -->
-                        <div class="technical-matrix">
-                            <div class="matrix-node">
-                                <span class="node-title">درجه صلاحیت رسمی</span>
-                                <span class="node-value">پایه ۱ طراحی، نظارت و اجرا</span>
+                        <div class="credentials-grid" data-animate="credentials">
+                            <div class="credential-item">
+                                <span class="credential-label">درجه صلاحیت رسمی</span>
+                                <span class="credential-value">پایه ۱ طراحی، نظارت و اجرا</span>
                             </div>
-                            <div class="matrix-node">
-                                <span class="node-title">دانش‌آموخته مهندسی</span>
-                                <span class="node-value">دانشگاه علم و صنعت تهران</span>
+                            <div class="credential-item">
+                                <span class="credential-label">دانش‌آموخته مهندسی</span>
+                                <span class="credential-value">دانشگاه علم و صنعت تهران</span>
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </section>
 
-        <!-- ==========================================================================
-           5. WORKS GALLERY (Flawless Monolith Pillar Grid for Portrait Images)
-           ========================================================================== -->
-        <section id="works" class="works-section section-reveal">
+        <!-- Decorative Divider -->
+        <div class="section-divider-decorative" data-section aria-hidden="true">
+            <div class="divider-line"></div>
+            <svg class="divider-diamond" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1">
+                <rect x="2" y="2" width="8" height="8" transform="rotate(45 6 6)" />
+            </svg>
+            <div class="divider-line"></div>
+        </div>
+
+        <!-- Works Section -->
+        <section id="works" class="works" data-section>
             <div class="section-container">
-                
                 <div class="works-header">
-                    <div class="meta-structural-label">۰۲ / کاتالوگ آثار شاخص</div>
-                    <h2 class="section-heading">پروژه‌های برگزیده</h2>
+                    <div class="works-header-top">
+                        <div class="section-number">۰۲</div>
+                        <div class="section-divider"></div>
+                        <div class="section-caption">کاتالوگ آثار شاخص</div>
+                    </div>
+                    <h2 class="works-heading" data-animate="heading">پروژه‌های برگزیده</h2>
                 </div>
 
-                <div class="portrait-monolith-grid">
-                    
-                    <!-- Monolith Project Card 01 -->
-                    <article class="architecture-monolith-card">
-                        <div class="monolith-thumbnail">
-                            <img src="images/project2.png" alt="Vertical residential architectural masterpiece" loading="lazy">
-                            <div class="card-hover-veil"></div>
+                <div class="projects-grid">
+
+                    <article class="project-card" data-animate="card">
+                        <div class="card-image-wrapper">
+                            <img src="images/project2.png" alt="مجتمع مسکونی مهرگان" class="card-image" loading="lazy">
+                            <div class="card-overlay"></div>
+                            <div class="card-number">۰۱</div>
                         </div>
-                        <div class="monolith-details">
-                            <h3 class="monolith-title">مجتمع مسکونی مهرگان</h3>
-                            <p class="monolith-subtitle">طراحی معماری فاز ۱ و ۲ - نظارت عالیه کارگاه</p>
+                        <div class="card-info">
+                            <h3 class="card-title">مجتمع مسکونی مهرگان</h3>
+                            <p class="card-subtitle">طراحی معماری فاز ۱ و ۲ — نظارت عالیه کارگاه</p>
+                            <div class="card-line"></div>
                         </div>
                     </article>
 
-                    <!-- Monolith Project Card 02 -->
-                    <article class="architecture-monolith-card">
-                        <div class="monolith-thumbnail">
-                            <img src="images/project3.png" alt="Luxury minimalist villa architecture" loading="lazy">
-                            <div class="card-hover-veil"></div>
+                    <article class="project-card" data-animate="card">
+                        <div class="card-image-wrapper">
+                            <img src="images/project3.png" alt="ویلای مدرن مستوفی" class="card-image" loading="lazy">
+                            <div class="card-overlay"></div>
+                            <div class="card-number">۰۲</div>
                         </div>
-                        <div class="monolith-details">
-                            <h3 class="monolith-title">ویلای مدرن مستوفی</h3>
-                            <p class="monolith-subtitle">ایده‌پردازی کانسپت و آرکیتکچر حجمی فضا</p>
+                        <div class="card-info">
+                            <h3 class="card-title">ویلای مدرن مستوفی</h3>
+                            <p class="card-subtitle">ایده‌پردازی کانسپت و آرکیتکچر حجمی فضا</p>
+                            <div class="card-line"></div>
                         </div>
                     </article>
 
-                    <!-- Monolith Project Card 03 -->
-                    <article class="architecture-monolith-card">
-                        <div class="monolith-thumbnail">
-                            <img src="images/project4.png" alt="Commercial high-rise technical design" loading="lazy">
-                            <div class="card-hover-veil"></div>
+                    <article class="project-card" data-animate="card">
+                        <div class="card-image-wrapper">
+                            <img src="images/project4.png" alt="ساختمان اداری سینا" class="card-image" loading="lazy">
+                            <div class="card-overlay"></div>
+                            <div class="card-number">۰۳</div>
                         </div>
-                        <div class="monolith-details">
-                            <h3 class="monolith-title">ساختمان اداری سینا</h3>
-                            <p class="monolith-subtitle">تطبیق تخصصی نقشه‌های سازه و محاسبات فاز ۲</p>
+                        <div class="card-info">
+                            <h3 class="card-title">ساختمان اداری سینا</h3>
+                            <p class="card-subtitle">تطبیق تخصصی نقشه‌های سازه و محاسبات فاز ۲</p>
+                            <div class="card-line"></div>
                         </div>
                     </article>
 
@@ -190,93 +244,40 @@
             </div>
         </section>
 
-        <!-- ==========================================================================
-           6. CLOSING PORTAL / CALM CTA (High-Contrast Architectural Interaction Hub)
-           ========================================================================== -->
-        <section class="closing-section section-reveal">
-            <div class="section-container cinematic-center">
-                <span class="meta-structural-label" style="color: var(--surface-white);">مشاوره و ارزیابی</span>
-                <h2 class="closing-headline">شروع گفتگو در باب پروژه ساختمانی شما</h2>
-                <p class="closing-text">جهت واگذاری فرآیند نظارت عالیه، طراحی تخصصی فازهای مهندسی یا کارشناسی دقیق املاک مسکونی با ما در ارتباط باشید.</p>
-                
-                <a href="tel:09183110633" class="btn-architectural-action">
-                    <span>برقراری تماس مستقیم با مهندس</span>
-                    <svg class="action-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <!-- CTA Section -->
+        <section class="cta-section" data-section>
+            <div class="cta-bg-pattern" aria-hidden="true"></div>
+            <div class="section-container cta-container">
+                <span class="cta-label">مشاوره و ارزیابی</span>
+                <h2 class="cta-heading">شروع گفتگو در باب<br>پروژه ساختمانی شما</h2>
+                <p class="cta-text">
+                    جهت واگذاری فرآیند نظارت عالیه، طراحی تخصصی فازهای مهندسی یا کارشناسی دقیق املاک مسکونی با ما در ارتباط باشید.
+                </p>
+                <a href="tel:09183110633" class="cta-button">
+                    <span class="cta-button-text">برقراری تماس مستقیم با مهندس</span>
+                    <svg class="cta-button-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
                     </svg>
                 </a>
             </div>
         </section>
+
     </main>
 
-    <!-- ==========================================================================
-       7. SITE FOOTER (With Author's Signature)
-       ========================================================================== -->
+    <!-- Footer -->
     <footer class="site-footer">
-        <div class="footer-container">
-            <div class="footer-identity-block">
-                <span class="footer-brand-title">مهندس نعمت بهروزی فرد</span>
-                <p class="footer-brand-sub">دفتر نظارت و کارشناسی ارشد مهندسی ساختمان</p>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <span class="footer-name">مهندس نعمت بهروزی فرد</span>
+                <span class="footer-role">دفتر نظارت و کارشناسی ارشد مهندسی ساختمان</span>
             </div>
-            <div class="footer-signature-block">
-                <p class="taha-author-credit">این سایت توسط طاها بهروزی ساخته شده است</p>
-                <p class="legal-copyright">&copy; تمام حقوق مادی و معنوی محفوظ است.</p>
+            <div class="footer-meta">
+                <span class="footer-credit">این سایت توسط طاها بهروزی ساخته شده است</span>
+                <span class="footer-copyright">&copy; تمام حقوق مادی و معنوی محفوظ است.</span>
             </div>
         </div>
     </footer>
 
-    <!-- ==========================================================================
-       8. VANILLA ULTRA-SMOOTH KINETIC ENGINE SCRIPT (Asynchronous & GPU-Fluid)
-       ========================================================================== -->
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            
-            // Mobile Menu Cinematic Staggered Toggle Mechanism
-            const menuTrigger = document.querySelector('.menu-trigger');
-            const navigationVeil = document.querySelector('.navigation-veil');
-            const navLinks = document.querySelectorAll('.nav-link, .nav-phone-link');
-            
-            const toggleMenuState = () => {
-                const isExpanded = menuTrigger.getAttribute('aria-expanded') === 'true';
-                menuTrigger.setAttribute('aria-expanded', !isExpanded);
-                navigationVeil.classList.toggle('veil-active');
-                
-                // Restrict background document scrolling perfectly while overlay is alive
-                document.body.style.overflow = isExpanded ? '' : 'hidden'; 
-            };
-
-            menuTrigger.addEventListener('click', toggleMenuState);
-
-            navLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    if (navigationVeil.classList.contains('veil-active')) {
-                        toggleMenuState();
-                    }
-                });
-            });
-
-            // Fluid High-Performance Intersection Observer for Soft Inertial Scroll Reveals
-            const observerConfiguration = { 
-                threshold: 0.05, 
-                rootMargin: "0px 0px -40px 0px" 
-            };
-            
-            const viewportObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('viewport-visible');
-                        viewportObserver.unobserve(entry.target); 
-                    }
-                });
-            }, observerConfiguration);
-
-            document.querySelectorAll('.section-reveal').forEach(node => viewportObserver.observe(node));
-            
-            // Instantly execute hero entrance on frame loading state completion
-            setTimeout(() => {
-                document.querySelectorAll('.load-reveal').forEach(node => node.classList.add('viewport-visible'));
-            }, 100);
-        });
-    </script>
+    <script src="main.js"></script>
 </body>
 </html>
